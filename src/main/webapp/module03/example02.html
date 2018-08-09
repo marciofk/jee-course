@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Module 03, Example 02</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet"
+			href="/JEECourse/ext/bootstrap/3.2.2/css/bootstrap.min.css">
+		<script src="/JEECourse/ext/jquery/1.11.2/jquery-1.11.2.js"></script>
+		<script src="/JEECourse/ext/bootstrap/3.2.2/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h4>Module 03, Example 02</h4>
+			<div class="panel panel-primary">
+				<div class="panel-heading">Generating a JSON response</div>
+				<div class="panel-body">
+					<button class="btn btn-default" id="login">Execute servlet</button>	
+				</div>
+				
+				<div class="panel panel-default" id="responseDivParent" hidden="true">
+					<div class="panel-heading">Retrieved data</div>
+					<div class="panel-body" id="responseDiv">
+					</div>
+				</div>				
+			</div>
+		</div>		
+	</body>
+	<script>
+		$('#login').click(function () {
+			$.ajax({
+				url: "/JEECourse/module03/example02",
+        		type: "GET",
+				dataType: "json",
+    			success: function (data) {
+        			$("#responseDiv").html("<div>Hello " + data.firstName + " " + data.lastName + 
+        				"<br><img src=\"../images/" + data.photo + "\" height=\"100\" width=\"100\"></div>");
+        			$("#responseDivParent").removeAttr("hidden");
+    			},
+        		error: function (xhr, status) {
+    	        	alert("Sorry, there was a problem!");
+	    		}
+			});
+		});
+	</script>
+</html>
+
+
+
+
