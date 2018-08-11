@@ -8,7 +8,7 @@
 
 <div class="alert alert-info alert-dismissible" role="alert">
 	<p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-		Marcio Fuckner (lecturer) @ HVA (Hogeschool van Amsterdam)</p>
+		Marcio Fuckner, Ph.D (lecturer) @ HVA (Hogeschool van Amsterdam)</p>
  	<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> marcio.fuckner@hva.nl</p>
  	<p>Version 2.0</p>
  	
