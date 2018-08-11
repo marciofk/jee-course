@@ -16,7 +16,7 @@ import nl.hva.jeecourse.utils.HTMLUtils;
 public class Example06 extends HttpServlet {
 	private static final long serialVersionUID = -7458692972689919241L;
 
-	public void service(HttpServletRequest req, HttpServletResponse resp)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		resp.setHeader("Refresh", "3");

@@ -20,7 +20,7 @@ public class Example02 extends HttpServlet {
 												 {"Mike","Wazowski","mike.png"}}; 
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		resp.setContentType("application/json");

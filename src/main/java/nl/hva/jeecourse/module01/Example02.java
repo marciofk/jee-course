@@ -37,24 +37,14 @@ public class Example02 extends HttpServlet {
 	}
 	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
+
 		StringBuilder sb = new StringBuilder();
-		
-		studentName = req.getParameter("name");
-		
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
 		sb.append(HTMLUtils.buildHeader("01", "02","Servlet lifecycle"));
 		sb.append("<div class=\"alert alert-info\" role=\"alert\">");
-		sb.append("Executing the service method ds - object hashCode = " + this.hashCode() + 
-				" student name " + studentName);
+		sb.append("Executing the doGet method ds - object hashCode = " + this.hashCode());
 		sb.append("</div>");
 		sb.append(HTMLUtils.buildFooter());
 
@@ -62,6 +52,7 @@ public class Example02 extends HttpServlet {
 		resp.setContentType("text/html");
 		out.println(sb.toString());		
 		
-		System.out.println("@Example02.service()");
+		System.out.println("@Example02.doGet()");
 	}
+
 }

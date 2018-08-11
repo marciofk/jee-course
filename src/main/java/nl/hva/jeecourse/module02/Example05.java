@@ -15,7 +15,7 @@ import nl.hva.jeecourse.utils.HTMLUtils;
 public class Example05 extends HttpServlet {
 	private static final long serialVersionUID = 7575900159776417573L;
 
-	public void service(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		StringBuilder sb = new StringBuilder();

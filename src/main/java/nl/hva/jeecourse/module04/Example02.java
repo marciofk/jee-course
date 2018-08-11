@@ -16,7 +16,7 @@ import nl.hva.jeecourse.utils.HTMLUtils;
 public class Example02 extends HttpServlet {
 	private static final long serialVersionUID = -112277080722567147L;
 
-	public void service(HttpServletRequest req, HttpServletResponse resp)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		Cookie[] cookies = req.getCookies();
 

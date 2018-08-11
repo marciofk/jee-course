@@ -19,7 +19,7 @@ import nl.hva.jeecourse.utils.HTMLUtils;
 public class Example02 extends HttpServlet {
 	private static final long serialVersionUID = -2828512280164863001L;
 
-	public void service(HttpServletRequest req, HttpServletResponse resp)
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		String name = req.getParameter("name");

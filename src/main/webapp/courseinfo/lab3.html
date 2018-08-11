@@ -1,0 +1,108 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<jsp:include page="/utils/header.jsp">
+	<jsp:param name="title" value="JEE Course" />
+	<jsp:param name="page" value="/courseinfo/overview.jsp" />
+</jsp:include>
+
+
+<div class="row">
+	
+	<div class="col-md-12">
+		<h3>Lab 3: Servlet Requests</h3>
+
+		<p>In this exercise, you will build a servlet that checks if a user is valid.
+		This servlet will be used by the login form of the client app. </p>
+
+		<h5>Prerequisites:</h5>
+		<ul>
+		    <li>Configuring the server-side project: If you do not have it, follow the <a href="https://github
+		    .com/marciofk/jee-course-lab-server" target="_blank">installation instructions</a></li>
+		    <li>Starting the client-side project: If you do not have it, follow the <a href="https://github.com/marciofk/jee-course-lab-client#starting-the-client-app" target="_blank">instructions</a></li>
+		</ul>
+
+	</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">Part 1: Understanding the exercise</div>
+		<div class="panel-body">
+   		<p>Open the <a href="http://localhost:8090/" target="_blank">client application</a></p>
+
+   		<p>You will find the login menu item, which allows the authentication based on user an password.
+   		This component uses the <i>/api/auth/login</i> endpoint to check if the user is valid.</p>
+
+   		<p>Your task is to build a servlet that checks if the user and password combination is valid.</p>
+
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Part 2: Building the servlet</div>
+        <div class="panel-body">
+
+   		<p>In your server-side project, create a servlet (LoginServlet) in the package <b>nl.hva.jeecourse.servlet</b>
+   		with the
+   		following characteristics</p>
+
+        <ol>
+            <li>This servlet must inherit from <i>nl.hva.jeecourse.servlet.cors.CorsServlet</i></li>
+            <li>This servlet must be linked to the endpoint <b>/api/auth/login</b></li>
+            <li>The servlet will only accept POST requests</li>
+            <li>The servlet will read the email and password parameters</li>
+            <li>To check if the email and password are valid, use the method nl.hva.jeecourse.repository.Repository.isValidUser.</li>
+            <li>You will need a reference of a <i>Repository</i> object. To do so, you can inject a
+            reference automatically using the @Inject annotation. The class nl.hva.jeecourse.listener
+            .AppContextListener has an
+            example on how to inject the repository into your servlet.</li>
+            <li>The response must be the value TRUE if the user is valid or FALSE if the user is invalid</li>
+        </ol>
+
+   		</p>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Part 3: Testing the servlet</div>
+        <div class="panel-body">
+
+   		    <p>Access the endpoint using Postman. Check if the servlet is validating the user. You can use one of the predefined users, present in the database:</p>
+
+   		    <ul>
+   		        <li>admin@acme.com, admin123</li>
+   		        <li>root@acme.com, root123</li>
+   		        <li>devops@acme.com, devops123</li>
+   		    </ul>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+    <div class="panel panel-default">
+
+		<div class="panel-heading">Part 4: Testing the servlet from the client app</div>
+        <div class="panel-body">
+
+   		<p>Try to log in and logout using the client app</p>
+
+   		</div>
+   	</div>
+	</div>
+
+
+</div>
+
+<jsp:include page="/utils/footer.jsp" />
+    

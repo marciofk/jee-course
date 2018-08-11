@@ -19,7 +19,7 @@ public class Example07 extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1549510236688939937L;
 
-	public void service(HttpServletRequest req, HttpServletResponse response)
+	public void doGet(HttpServletRequest req, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		StringBuilder sb = new StringBuilder();

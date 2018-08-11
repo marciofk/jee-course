@@ -34,7 +34,7 @@
     </div>    
     <div>
       	<% if(session.getAttribute("name") == null) { %>
-		<form class="navbar-form form-inline pull-right"  action="/JEECourse/module06/example01b.jsp">
+		<form class="navbar-form form-inline pull-right"  action="/JEECourse/module06/example01b.jsp" method="POST">
     		<input type="text" placeholder="User name" name="name">
     		<input type="password" placeholder="Password" name="password">
     		<input type="hidden" name="pageSuccess"  value='<%= request.getParameter("page")%>'/>

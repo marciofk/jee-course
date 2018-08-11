@@ -64,6 +64,7 @@ public class AnswerResource {
         // Getting the question
         Question question = service.getQuestionOfFlashCard(flashCard, questionId);
 
+
         if(question == null) {
             return Response.status(Response.Status.NOT_FOUND).
                     entity(new ClientError("Question not found for id " + questionId)).build();

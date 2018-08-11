@@ -1,0 +1,184 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<jsp:include page="/utils/header.jsp">
+	<jsp:param name="title" value="JEE Course" />
+	<jsp:param name="page" value="/courseinfo/overview.jsp" />
+</jsp:include>
+
+
+<div class="row">
+	
+	<div class="col-md-12">
+		<h3>Lab 1: HTTP Protocol</h3>
+
+		<p>This lab contains a series of exercises related to the HTTP protocol.</p>
+
+		<h5>Prerequisites:</h5>
+		<ul>
+		    <li>HTTP Client: We recommend Postman. If you do not have Postman yet, please download and install it using <a href="https://www.getpostman.com/apps" target="_blank">this link</a>
+		    <li>Having the mock REST API running. To know how to run it, please refer to the <a href="https://github.com/marciofk/jee-course-lab-client#starting-the-mock-rest-api" target="_blank">Instructions (Starting the mock REST API)</a>
+		</ul>
+
+	</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">Exercise 1</div>
+		<div class="panel-body">
+   		<p>Execute a GET request to the following address: http://localhost:8090/</p>
+
+   		<h5>Questions</h5>
+   		<ol>
+   		    <li>What is the MIME type of the response?</li>
+   		    <li>Which header specifies the MIME type of the response?</li>
+   		    <li>Which header specifies the response size?</li>
+   		    <li>What is the unit to describe the response size?</li>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Exercise 2</div>
+        <div class="panel-body">
+
+   		<p>Execute a GET request to the following address: localhost:3000/api/customers</p>
+
+   		<h5>Questions</h5>
+   		<ol>
+   		    <li>What is the MIME type of the response?</li>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Exercise 3</div>
+        <div class="panel-body">
+
+   		<p>Execute a POST request to the address http://localhost:8080/JEECourse/module02/example02,
+   		with the following parameters:</p>
+
+   		<ul>
+   		    <li>name: John Doe</li>
+   		    <li>company: C&A</li>
+   		</ul>
+
+   		<p>The mime type must be application/x-www-form-urlencoded</p>
+
+   		<h5>Questions</h5>
+   		<ol>
+   		    <li>What is the MIME type of the response?</li>
+   		    <li>What is the UTF-8 character code of the character &</li>
+   		    <li>What is the content of the HTTP response body?</li>
+   		    <li>What is the status code?</li>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+    <div class="panel panel-default">
+
+		<div class="panel-heading">Exercise 4</div>
+        <div class="panel-body">
+
+   		<p>Execute a GET request to the address http://localhost:8080/JEECourse/module02/example02,
+   		with the following parameters:</p>
+
+   		<ul>
+   		    <li>name: John Doe</li>
+   		    <li>company: C&A</li>
+   		</ul>
+
+   		<h5>Questions</h5>
+   		<ol>
+   		    <li>What is the final URL?</li>
+   		    <li>What is the difference from exercise 3</li>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">Exercise 5</div>
+		<div class="panel-body">
+   		<p>Execute a PUT request to the following address: http://localhost:3000/api/customers</p>
+
+        <p>The MIME type of the request must be <i>application/json</i>, and the body must be:</p>
+
+   		<pre>
+{
+   "firstName": "john",
+   "lastName": "doe",
+   "gender": "male",
+   "address": "1234 Anywhere St.",
+   "city": " Phoenix ",
+   "state": {
+      "abbreviation": "AZ",
+      "name": "Arizona"
+   },
+   "latitude": 33.299,
+   "longitude": -111.963
+}</pre>
+
+   		<h5>Questions</h5>
+   		<ol>
+   		    <li>What is the content of the response body</li>
+   		    <li>What is the different between the request and the response body?</li>
+   		    <li>What is the status code?</li>
+            <li>What happens if you do not send the correct MIME type?</li>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Exercise 6</div>
+		<div class="panel-body">
+
+   		<p>Execute a GET request to the following address: http://localhost:3000/api/config</p>
+
+   		<h5>Questions</h5>
+   		<ol>
+   		    <li>What is the status code?</li>
+            <li>What is the meaning of this status code?</li>
+            <li>Is the status code related to the client or the server?</li>
+   		</ol>
+   		</div>
+    </div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Exercise 7</div>
+        <div class="panel-body">
+   		<p>Execute a GET request to the following address: http://localhost:3000/api/se</p>
+
+   		<h5>Questions</h5>
+   		<ol>
+   		    <li>What is the status code?</li>
+            <li>What is the meaning of this status code?</li>
+            <li>Is the status code related to the client or the server?</li>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+</div>
+
+<jsp:include page="/utils/footer.jsp" />
+    

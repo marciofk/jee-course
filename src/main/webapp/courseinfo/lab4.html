@@ -1,0 +1,138 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<jsp:include page="/utils/header.jsp">
+	<jsp:param name="title" value="JEE Course" />
+	<jsp:param name="page" value="/courseinfo/overview.jsp" />
+</jsp:include>
+
+
+<div class="row">
+	
+	<div class="col-md-12">
+		<h3>Lab 4: Servlet Responses</h3>
+
+		<p>In this exercise, you will build a servlet that returns binary data to the client</p>
+
+		<h5>Prerequisites:</h5>
+		<ul>
+		    <li>Configuring the server-side project: If you do not have it, follow the <a href="https://github
+		    .com/marciofk/jee-course-lab-server" target="_blank">installation instructions</a></li>
+		    <li>Starting the client-side project: If you do not have it, follow the <a href="https://github.com/marciofk/jee-course-lab-client#starting-the-client-app" target="_blank">instructions</a></li>
+		</ul>
+
+	</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">Part 1: Understanding the exercise</div>
+		<div class="panel-body">
+   		<p>Open the <a href="http://localhost:8090/" target="_blank">client application</a> and login with a valid user
+   		and password.</p>
+
+   		<p>You will find the login menu item, which allows the authentication based on user an password.
+   		This component uses the <i>/api/auth/login</i> endpoint to check if the user is valid.</p>
+
+   		<p>Select the menu option <b>New Customer</b> that is now available. You will see a form that allows users
+   		to specify the customer details. You will see also a drop-down to select the state or region of the customer
+   		. Note that a predefined list of provinces of Netherlands is already present. </p>
+
+   		<p>At this moment, the insert button will not work and is not part of the scope of this exercise. We will work
+   		on this feature later on. Our focus is on the selection of states. The idea here is presenting a map and flag
+   		of the selected state. Currently, you can only see the frames of the image, without any content.</p>
+
+   		<p>To better understand what the angular application is doing, take a look at the following source codes:</p>
+
+   		<ul>
+   		    <li><a href="https://github.com/marciofk/jee-course-lab-client/blob/master/src/main/ngapp/src/app/customer
+   		    /customer-edit.component.html" target="_blank">customer-edit.component.html</a>: Take a look at the
+   		    state selection component and the img tag pointing to the resource</li>
+   		    <li><a href="https://github.com/marciofk/jee-course-lab-client/blob/master/src/main/ngapp/src/app/customer
+   		    /customer-edit.component.ts" target="_blank">customer-edit.component.ts</a>: Take a look at the variable
+   		    pointing to the resource.</li>
+
+   		</ul>
+
+
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Part 2: Building the servlet</div>
+        <div class="panel-body">
+
+   		<p>In your server-side project, create a servlet (StatePictureServlet) in the package <b>nl.hva.jeecourse
+   		.servlet</b>
+   		with the
+   		following characteristics</p>
+
+        <ol>
+            <li>This servlet must inherit from <i>HttpServlet</i></li>
+            <li>This servlet must be linked to the endpoint specified in the Angular application</li>
+            <li>The servlet will only accept GET requests</li>
+            <li>The servlet will generate a binary content</li>
+            <li>The methods <i>getStateFlag(String abbrev)</i> and <i>getStateMap(String abbrev)</i> of the
+            repository returns an array of bytes representing an <i>image/png</i> content.</li>
+            <li>If the user tries to get a different type of image (anything but flag and map), the servlet must return
+            a 400 status code (Bad request) with additional information to the client.</i>
+            <li>You will need a reference of a <i>Repository</i> object. To do so, you can inject a
+            reference automatically using the @Inject annotation. The class nl.hva.jeecourse.listener
+            .AppContextListener has an
+            example on how to inject the repository into your servlet.</li>
+        </ol>
+
+   		</p>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Part 3: Testing the servlet</div>
+        <div class="panel-body">
+
+   		    <p>Access the endpoint using Postman. Check if the servlet is returning a proper flag and map of the state.
+   		    Use one of the followings abbreviations:</p>
+
+   		    <ul>
+                <li>DR: Drenthe</li>
+                <li>FL: Flevoland</li>
+                <li>FR: Friesland</li>
+                <li>GE: Gelderland</li>
+                <li>GR: Groningen</li>
+                <li>LI: Limburg</li>
+                <li>NB: North Brabant</li>
+                <li>NH: North Holland</li>
+                <li>OV: Overijssel</li>
+                <li>UT: Utrecht</li>
+                <li>ZE: Zeeland</li>
+                <li>ZH: South Holland</li>
+   		    </ul>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+    <div class="panel panel-default">
+
+		<div class="panel-heading">Part 4: Testing the servlet from the client app</div>
+        <div class="panel-body">
+            <p>Check if the corresponding map and flag are presented when the user selects a state in the form.</p>
+   		</div>
+   	</div>
+	</div>
+
+
+</div>
+
+<jsp:include page="/utils/footer.jsp" />
+    

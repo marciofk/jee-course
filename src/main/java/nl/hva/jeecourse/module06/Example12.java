@@ -18,7 +18,7 @@ public class Example12 extends HttpServlet {
 	private static final long serialVersionUID = -7729359387753081064L;
 
 	@Override
-	protected void service(HttpServletRequest request,
+	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		String user = request.getParameter("user");

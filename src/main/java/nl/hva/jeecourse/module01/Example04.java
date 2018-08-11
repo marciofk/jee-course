@@ -17,7 +17,7 @@ public class Example04 extends HttpServlet {
 	private static final long serialVersionUID = 1612538233809174504L;
 	private static final Logger log = Logger.getLogger(Example04.class.getName());
 
-	public void service(HttpServletRequest req, HttpServletResponse resp)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		log.log(Level.INFO,"Entering in the service method ");

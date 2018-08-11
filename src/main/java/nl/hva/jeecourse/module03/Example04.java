@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Example04 extends HttpServlet {
 	private static final long serialVersionUID = -8654772330965867570L;
 
-	public void service(HttpServletRequest req, HttpServletResponse resp)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		resp.setContentType("text/html");
 		resp.setStatus(404);

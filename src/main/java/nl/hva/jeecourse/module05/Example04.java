@@ -17,7 +17,7 @@ import nl.hva.jeecourse.utils.HTMLUtils;
 public class Example04 extends HttpServlet {
 	private static final long serialVersionUID = 4887552195150414093L;
 
-	public void service(HttpServletRequest req, HttpServletResponse resp)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();

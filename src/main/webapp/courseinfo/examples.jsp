@@ -36,6 +36,7 @@
 			<a href="${pageContext.request.contextPath}/module02/example03.html" class="list-group-item">Example 03: Retrieving HTTP headers</a>
 			<a href="${pageContext.request.contextPath}/module02/example04.html" class="list-group-item">Example 04: Retrieving all HTTP headers</a>
 			<a href="${pageContext.request.contextPath}/module02/example05.html" class="list-group-item">Example 05: Retrieving HTTP request information</a>
+			<a href="${pageContext.request.contextPath}/module02/example06.html" class="list-group-item">Example 06: Retrieving HTTP request body</a>
 		</div>		
 	</div>			
 	

@@ -14,7 +14,7 @@ public class Example04 extends HttpServlet {
 
 	private static final long serialVersionUID = 7828693751952240032L;
 
-	public void service(HttpServletRequest req, HttpServletResponse resp)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		StringBuilder sb = new StringBuilder();

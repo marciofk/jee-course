@@ -1,0 +1,118 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<jsp:include page="/utils/header.jsp">
+	<jsp:param name="title" value="JEE Course" />
+	<jsp:param name="page" value="/courseinfo/overview.jsp" />
+</jsp:include>
+
+
+<div class="row">
+	
+	<div class="col-md-12">
+		<h3>Lab 2: Servlet Introduction</h3>
+
+		<p>In this exercise, you will build your first servlet. This servlet will be used by the client application.</p>
+
+		<h5>Prerequisites:</h5>
+		<ul>
+		    <li>Configuring of the server-side project: Follow the <a href="https://github
+		    .com/marciofk/jee-course-lab-server" target="_blank">installation instructions</a></li>
+		    <li>Starting the client-side project: Follow the <a href="https://github.com/marciofk/jee-course-lab-client#starting-the-client-app" target="_blank">instructions</a></li>
+		</ul>
+
+	</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">Part 1: Understanding the exercise</div>
+		<div class="panel-body">
+   		<p>Open the <a href="http://localhost:8090/" target="_blank">client application</a></p>
+
+   		<p>You will find the menu header with some menu items (customers, orders, about, etc.). Note that
+   		these functionalities will not work now, because the mock server is down and you
+   		will build the server-side part from now on. </p>
+
+   		<p>The first server-side functionality to develop is the <b>about servlet</b>.
+   		This servlet will present information about the customised application.</p>
+
+   		<p>Click on the <b>about</b> menu option. You will see the credits of the client application.
+   		The last information item is called <i>Additional information</i>. There is no content
+   		because the client is calling an endpoint that does not exist yet. To better understand
+   		how the Angular application is calling the endpoint, take a look at the following source-codes:</p>
+
+   		<ul>
+   		    <li><a href="https://github.com/marciofk/jee-course-lab-client/blob/master/src/main/ngapp/src/app/about/about.component.html" target="_blank">about.component.html:</a><p>The HTML file has a div that binds to the variable <i>labContent</i></p></li>
+   		    <li><a href="https://github.com/marciofk/jee-course-lab-client/blob/master/src/main/ngapp/src/app/about/about.component.ts" target="_blank">about.component.ts: </a><p>The typescript file access the server endpoint (e.g. http://localhost:8095/api/custom-about) and saves the content of the response into the variable</p></li>
+   		</ul>
+
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Part 2: Building the servlet</div>
+        <div class="panel-body">
+
+        <ul>
+            <li>In your server-side project, create the about servlet (e.g. AboutServlet) in the package <b>nl.hva
+            .jeecourse.servlet</b></li>
+            <li>This servlet must be linked to the endpoint <b>/api/custom-about</b></li>
+            <li>Override the <i>doGet</i> method</i>
+            <li>The method must return an HTML fragment with the following text: <i>"Updated by [participant] during the
+             summer course of 2018 at the Metropolia University of Applied Sciences"</i></li>
+            <li>The MIME type must be <i>text/html</i></li>
+   		</p>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">Part 3: Testing the servlet</div>
+        <div class="panel-body">
+
+   		    <p>Access the endpoint using Postman. Check if the servlet is returning a proper HTML fragment</p>
+   		</ol>
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+    <div class="panel panel-default">
+
+		<div class="panel-heading">Part 4: Testing the servlet from the client app</div>
+        <div class="panel-body">
+
+   		<p>Now that the servlet is working properly, you will make it work from the client app.
+   		However, the servlet is not accessible from the client app. Try to access the <i>about</i> menu item from the
+   		client app.</p>
+
+   		<p> If you check the browser console, you will see a Cross-Origin Resource Sharing (CORS) error.
+   		Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell
+   		a browser to let a web application running at one origin (domain) have permission to access
+   		selected resources from a server at a different origin.
+   		For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts</p>
+
+   		<p>From now, you will change your servlet to inherit to the existing servlet <i>nl.hva.jeecourse.servlet.cors
+   		.CorsServlet</i> instead of <i>HttpServlet</i>. We will see more details about CORS and a more effective
+   		approach to deal with CORS later on.</p>
+
+   		<p>Now you can test the servlet using the client app.</p>
+
+   		</div>
+   	</div>
+	</div>
+
+
+</div>
+
+<jsp:include page="/utils/footer.jsp" />
+    
