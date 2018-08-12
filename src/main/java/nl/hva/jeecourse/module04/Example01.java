@@ -25,16 +25,16 @@ public class Example01 extends HttpServlet {
 		String news = req.getParameter("news");
 
 		// Add cookies
-		Cookie cookie = new Cookie("nameCookie", URLEncoder.encode(name,"UTF-8"));
+		Cookie cookie = new Cookie("nameCookie", URLEncoder.encode(name == null ? "": name,"UTF-8"));
 		cookie.setMaxAge(3 * 60); // 3 minutes
 		cookie.setPath("/");
 		resp.addCookie(cookie);
 
-		cookie = new Cookie("emailCookie", URLEncoder.encode(email,"UTF-8"));
+		cookie = new Cookie("emailCookie", URLEncoder.encode(email == null ? "": email,"UTF-8"));
 		cookie.setMaxAge(60 * 60 * 24 * 360); // 1 year
 		resp.addCookie(cookie);
 		
-		cookie = new Cookie("newsCookie", URLEncoder.encode(news,"UTF-8"));
+		cookie = new Cookie("newsCookie", URLEncoder.encode(news == null ? "": news,"UTF-8"));
 		cookie.setMaxAge(60 * 60 * 24 * 360); // 1 year
 		resp.addCookie(cookie);		
 		

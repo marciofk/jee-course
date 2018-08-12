@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<jsp:include page="/utils/header.jsp">
+	<jsp:param name="title" value="JEE Course" />
+	<jsp:param name="page" value="/courseinfo/overview.jsp" />
+</jsp:include>
+
+
+<div class="row">
+	
+	<div class="col-md-12">
+		<h3>Lab 5: Cookies</h3>
+
+		<p>In this exercise, you will build the REST endpoints to make the client application work properly</p>
+
+		<h5>Prerequisites:</h5>
+		<ul>
+		    <li>Configuring the server-side project: If you do not have it, follow the <a href="https://github
+		    .com/marciofk/jee-course-lab-server" target="_blank">installation instructions</a></li>
+		    <li>Starting the client-side project: If you do not have it, follow the <a href="https://github.com/marciofk/jee-course-lab-client#starting-the-client-app" target="_blank">instructions</a></li>
+		</ul>
+
+	</div>
+	
+</div>
+
+<div class="row">
+
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">Part 1: Understanding the exercise</div>
+		<div class="panel-body">
+   		<p>Open the <a href="http://localhost:8090/" target="_blank">client application</a> and login with a valid user
+   		and password.</p>
+
+   		<p>For this exercise, you will use cookies to store the last login for further usage, as well as track
+   		the number of successful login attempts.
+
+   		</div>
+   	</div>
+	</div>
+
+	<div class="col-md-12">
+		<div class="panel panel-default">
+
+			<div class="panel-heading">Part 2: Customer resource (/customers)</div>
+			<div class="panel-body">
+
+			<p>In your server-side project, modify the Login servlet to:</p>
+
+			<ol>
+				<li>Method: POST, path: /, return 201 (Created) and the JSON representation of the new customer</li>
+
+
+				<li>Method: GET, path: /page/{skip}/{top}, return a list of customers starting at position {skip}, with
+				the maximum of {top} elements. It must also send a header called X-InlineCount containing the total
+					number of clients for pagination purposes</li>
+
+				<li>Method: GET, path: /{id}, return 200 and the JSON representation of the customer found, return 404
+					if the customer does not exist on the database.</li>
+
+				<li>Method: PUT, path: /{id}, return 200, the response body
+					must be json with the boolean field status (e.g. { "status" : true }. If the customer was not found,
+					return 404 and an error message.
+				</li>
+
+				<li>Method: DELETE, path: /{id}, return 200, the response body
+					must be json with the boolean field status (e.g. { "status" : true }. If the customer was not found,
+					return 404 and an error message.
+				</li>
+
+			</ol>
+
+			</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="col-md-12">
+    <div class="panel panel-default">
+
+		<div class="panel-heading">Part 4: Testing the client app</div>
+        <div class="panel-body">
+			<p>Check if the application is working correctly after the API migration</p>
+   		</div>
+   	</div>
+	</div>
+
+
+</div>
+
+<jsp:include page="/utils/footer.jsp" />
+    

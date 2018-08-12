@@ -51,4 +51,9 @@ public class Example02 extends HttpServlet {
 		resp.setContentType("text/html");
 		out.println(sb.toString());
 	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req,resp);
+	}
 }

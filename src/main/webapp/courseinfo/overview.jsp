@@ -52,7 +52,10 @@
 	
  	<div class="col-md-4">
 		<h4>Evaluation</h4>
-		<p>Development of a case-study presented during the labs. Students build a JEE project</p>
+		<p>Participants will work on the development of a case-study presented during the session. A final
+           JEE project will be delivered during the last day. This project consists of the programming of a
+           server-side application where the students must apply the concepts learned during the course. The
+           correct execution of a part of the project will be necessary to obtain the 3 ECTs.</p>
 	</div>
  	<div class="col-md-4">
 		<h4>Target Audience</h4>
