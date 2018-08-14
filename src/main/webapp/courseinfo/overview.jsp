@@ -44,9 +44,7 @@
  	<div class="col-md-4">
 		<h4>Duration</h4>
 		<p>
-		20 hrs of mixed sessions (lectures and lab). The module will be taught
-		in five days during the month of August 2018.
-		Lectures and labs will be taught in English.
+		20 hrs of mixed sessions (lectures and lab). Lectures and labs will be taught in English.
 		</p>
 	</div>
 	

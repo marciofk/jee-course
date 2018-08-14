@@ -57,7 +57,7 @@ public class UserResource {
                 .setIssuer(uri.getPath())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis()+15*60*1000)) // 15 minutes
-                .signWith(SignatureAlgorithm.HS512,key)
+                .signWith(key,SignatureAlgorithm.HS512)
                 .compact();
 
         return jwtToken;
