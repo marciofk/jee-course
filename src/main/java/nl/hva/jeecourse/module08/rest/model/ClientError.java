@@ -19,12 +19,12 @@ public class ClientError implements Serializable {
     public ClientError(String message) {
         setMessage(message);
     }
-    
-    public final void setMessage(String message) {
+
+    public void setMessage(String message) {
         this.message = message;
     }
     
-    public String setMessage() {
+    public String getMessage() {
         return message;
     }
     

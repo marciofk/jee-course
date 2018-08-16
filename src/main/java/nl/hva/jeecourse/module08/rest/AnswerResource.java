@@ -78,6 +78,8 @@ public class AnswerResource {
             answers =  service.getAllAnswersOfQuestion(question);       
         
         return Response.status(Response.Status.OK).
+
+                    header("number-of-answers",answers.size()).
                     entity(answers).build();
         
     }
