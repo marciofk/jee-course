@@ -107,7 +107,6 @@
 		  <li class="list-group-item">Creating and retrieving a session</li>
 		  <li class="list-group-item">Managing session attributes</li>
 		  <li class="list-group-item">Listeners (*)</li>
-		  <li class="list-group-item"><a href="#">Lab 6</a></li>
 		</ul>
 		<p>Total time: <b>2 hours 15 minutes</b></p>
 		<p>Click <a href="slides/05.pdf">here</a> to download the slide</p>
@@ -140,7 +139,7 @@
               <li class="list-group-item">Query Parameters</li>
               <li class="list-group-item">Custom Responses</li>
               <li class="list-group-item">CORS</li>
-		      <li class="list-group-item"><a href="#">Lab 7</a></li>
+		      <li class="list-group-item"><a href="lab6.html">Lab 6</a></li>
             </ul>
             <p>Total time: 5 hours</p>
             <p>Click <a href="slides/08.pdf">here</a> to download the slide</p>
@@ -153,10 +152,10 @@
               <li class="list-group-item">Listeners</li>
               <li class="list-group-item">Filters</li>
               <li class="list-group-item">JWT and Java APIs</li>
-              <li class="list-group-item"><a href="#">Lab 8</a></li>
+              <li class="list-group-item"><a href="#">Lab 7</a></li>
             </ul>
             <p>Total time: 5 hours</p>
-            <p>Click <a href="#">here</a> to download the slide</p>
+            <p>Click <a href="slides/09.pdf">here</a> to download the slide</p>
 
         </div>
     </div>

@@ -10,7 +10,7 @@
 	<p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
 		Marcio Fuckner, Ph.D (lecturer) @ HVA (Hogeschool van Amsterdam)</p>
  	<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> marcio.fuckner@hva.nl</p>
- 	<p>Version 2.0</p>
+ 	<p>Version 2.1</p>
  	
 </div>					
 

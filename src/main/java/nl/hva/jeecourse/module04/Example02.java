@@ -32,13 +32,14 @@ public class Example02 extends HttpServlet {
 		sb.append("</thead>");
 		sb.append("</tbody>");
 
-		for (int i = 0; i < cookies.length; i++) {
-			if(cookies[i].getName().equals("visits")) {
-				continue;
+		if(cookies != null)
+			for (int i = 0; i < cookies.length; i++) {
+				if(cookies[i].getName().equals("visits")) {
+					continue;
+				}
+				sb.append("<tr>" + "<td>" + cookies[i].getName() + "</td>" + "<td>"
+						+ cookies[i].getValue() + "</td>" + "</tr>");
 			}
-			sb.append("<tr>" + "<td>" + cookies[i].getName() + "</td>" + "<td>"
-					+ cookies[i].getValue() + "</td>" + "</tr>");
-		}
 
 		sb.append("</tbody></table>");
 

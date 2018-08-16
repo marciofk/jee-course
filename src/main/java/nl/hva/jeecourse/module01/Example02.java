@@ -42,6 +42,10 @@ public class Example02 extends HttpServlet {
 
 		StringBuilder sb = new StringBuilder();
 
+		String studentName = req.getParameter("studentName");
+
+		// ...
+
 		sb.append(HTMLUtils.buildHeader("01", "02","Servlet lifecycle"));
 		sb.append("<div class=\"alert alert-info\" role=\"alert\">");
 		sb.append("Executing the doGet method ds - object hashCode = " + this.hashCode());

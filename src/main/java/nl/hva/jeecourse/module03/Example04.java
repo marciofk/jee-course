@@ -15,6 +15,6 @@ public class Example04 extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		resp.setContentType("text/html");
-		resp.setStatus(404);
+		resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
 	}
 }
