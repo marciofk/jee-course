@@ -98,6 +98,71 @@
    	</div>
 	</div>
 
+	<div class="col-md-12">
+		<div class="panel panel-default">
+
+			<div class="panel-heading">Part 4: Hints</div>
+			<div class="panel-body">
+				<p>If you want to generate a custom JSON without needing a Java object, use Jackson
+					<i>ObjectMapper</i> and <i>ObjectNode</i>, for example: </p>
+
+				<pre>
+// Creates an object mapper
+ObjectMapper mapper = new ObjectMapper();
+
+// Creates a node form the mapper
+ObjectNode node = mapper.createObjectNode();
+
+// Add attributes
+node.put("foo","bar");
+				</pre>
+
+				<p>If you want to generate a custom HTTP response status message, create a custom StatusType</p>
+
+				<pre>
+public class CustomStatusType implements Response.StatusType {
+
+    private Response.Status.Family family;
+    private int statusCode;
+    private String reason;
+
+    public CustomStatusType(final Response.Status.Family family, final int statusCode,
+                              final String reasonPhrase) {
+        super();
+
+        this.family = family;
+        this.statusCode = statusCode;
+        this.reason = reasonPhrase;
+    }
+
+    @Override
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    @Override
+    public Response.Status.Family getFamily() {
+        return family;
+    }
+
+    @Override
+    public String getReasonPhrase() {
+        return reason;
+    }
+
+				</pre>
+
+				<p>And use it when you generate your response. For example:</p>
+
+				<pre>
+return Response.status(new CustomStatusType(Response.Status.Family.CLIENT_ERROR,400,"Invalid customer")).
+                    entity(new ClientError("Invalid customer: " + e.getMessage())).build();
+				</pre>
+
+			</div>
+		</div>
+	</div>
+
 
 </div>
 
