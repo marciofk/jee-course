@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+
+<jsp:include page="/utils/header.jsp">
+    <jsp:param name="title" value="JEE Course" />
+    <jsp:param name="page" value="/courseinfo/overview.jsp" />
+</jsp:include>
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <h3>Lab 7: JWT</h3>
+
+        <p>In this exercise, you will change the <i>Login</i> servlet to generate a JWT token and protect the POST
+            method of the <i>customers</i> endpoint, requiring a valid JWT token to add new customers.</p>
+
+        <h5>Prerequisites:</h5>
+        <ul>
+            <li>Configuring the server-side project: If you do not have it, follow the <a href="https://github.com/marciofk/jee-course-lab-server" target="_blank">installation instructions</a></li>
+            <li>Starting the client-side project: If you do not have it, follow the <a href="https://github.com/marciofk/jee-course-lab-client#starting-the-client-app" target="_blank">instructions</a></li>
+        </ul>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Part 1: Understanding the exercise</div>
+            <div class="panel-body">
+                <p>Take a look at module09.jwt.resource.UserResource class to understand how a token can be
+                    generated</p>
+
+                <p>Take a look at module09.jwt.resource.EchoResource class to understand how the @JwtTokenMandatory
+                    annotation works
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">Part 2: Changing the login servlet</div>
+            <div class="panel-body">
+
+                <p>Change your login servlet project in order to:</p>
+
+                <ol>
+                    <li>Generate a JWT token that expires in 2 minutes.</li>
+
+
+                    <li>Send the token as a header (Authorization Bearer)</li>
+
+                </ol>
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">Part 3: Protecting the REST endpoint</div>
+            <div class="panel-body">
+
+                <p>Use the same strategy presented in module 09 to protect your REST resource</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">Part 4: Testing the client app</div>
+            <div class="panel-body">
+                <p>Check if the application is working correctly. Use the browse inspector to check if the POST
+                    request is accepted when the token is valid and rejected with the JWT is expired. Note that the
+                    client is not asking to refresh the token. </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<jsp:include page="/utils/footer.jsp" />

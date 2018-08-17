@@ -152,7 +152,7 @@
               <li class="list-group-item">Listeners</li>
               <li class="list-group-item">Filters</li>
               <li class="list-group-item">JWT and Java APIs</li>
-              <li class="list-group-item"><a href="#">Lab 7</a></li>
+              <li class="list-group-item"><a href="lab7.html">Lab 7</a></li>
             </ul>
             <p>Total time: 5 hours</p>
             <p>Click <a href="slides/09.pdf">here</a> to download the slide</p>

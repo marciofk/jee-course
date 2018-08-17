@@ -70,7 +70,9 @@
 
 				<li>Method: PUT, path: /{id}, return 200, the response body
 					must be json with the boolean field status (e.g. { "status" : true }. If the customer was not found,
-					return 404 and an error message.
+					return 404 and an error message. You will see that the client is sending an additional json field
+					that does not match with the <i>Customer</i> object. To ignore fields, you can use the annotation
+					<b>@JsonIgnoreProperties(ignoreUnknown = true)</b> on top of the <i>Customer</i> class.
 				</li>
 
 				<li>Method: DELETE, path: /{id}, return 200, the response body
@@ -89,7 +91,7 @@
 	<div class="col-md-12">
     <div class="panel panel-default">
 
-		<div class="panel-heading">Part 4: Testing the client app</div>
+		<div class="panel-heading">Part 3: Testing the client app</div>
         <div class="panel-body">
 			<p>Check if the application is working correctly after the API migration</p>
    		</div>
